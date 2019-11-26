@@ -4,7 +4,8 @@
   "description": "A simple TODO application.",
   "private": true,
   "scripts": {
-    "start": "npm start --prefix client"
+    "start": "npm start --prefix client",
+    "build": "npm build --prefix client"
   },
   "keywords": [
     "todo",
