@@ -16,7 +16,7 @@ function App() {
         <h1>Tasks</h1>
       </header>
       <main>
-        <TaskList></TaskList>
+        <TaskList />
       </main>
     </div>
   );
