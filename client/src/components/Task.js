@@ -19,10 +19,7 @@ const ListItemCSS = {
  */
 
 function Task(props) {
-  const [isCompleted, setIsCompleted] = useState(props.isCompleted);
-
   const markCompleted = () => {
-    setIsCompleted(!isCompleted);
     const updatedList = props.tasks.map(task => {
       if (task.description === props.description) {
         task.isCompleted = !task.isCompleted;
@@ -33,7 +30,7 @@ function Task(props) {
     localStorage.setItem('tasks', JSON.stringify(updatedList));
   }
 
-  if (isCompleted) {
+  if (props.isCompleted) {
     return <li onClick={markCompleted} style={ListItemCSS}><strike>{props.description}</strike></li>
   } else {
     return <li onClick={markCompleted} style={ListItemCSS}>{props.description}</li>

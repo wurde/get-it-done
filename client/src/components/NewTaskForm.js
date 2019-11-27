@@ -14,8 +14,8 @@ function NewTaskForm(props) {
   function addTask(e) {
     e.preventDefault();
     const updatedList = [...props.tasks, { description: task, isCompleted: false }];
-    props.setTasks(updatedList);
     localStorage.setItem('tasks', JSON.stringify(updatedList));
+    props.setTasks(updatedList);
     setTask('');
   }
 

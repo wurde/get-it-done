@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import Task from './Task';
 import NewTaskForm from './NewTaskForm';
+import ClearButton from './ClearButton';
 
 /**
  * Define styles
@@ -23,8 +24,9 @@ function TaskList() {
 
   return (
     <ul style={ListCSS}>
+      <ClearButton tasks={tasks} setTasks={setTasks} />
       {tasks.map((task, index) => (
-        <Task key={index} {...task} tasks={tasks} setTasks={setTasks} />
+        <Task key={index} index={index} {...task} tasks={tasks} setTasks={setTasks} />
       ))}
       <NewTaskForm tasks={tasks} setTasks={setTasks} />
     </ul>
