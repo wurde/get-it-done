@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import TaskList from './components/TaskList';
 
 /**
  * Define component
@@ -12,10 +13,11 @@ function App() {
   return (
     <div>
       <header>
-        <h1>
-          Get It Done - <small>A Simple TODO application</small>
-        </h1>
+        <h1>Tasks</h1>
       </header>
+      <main>
+        <TaskList></TaskList>
+      </main>
     </div>
   );
 }
