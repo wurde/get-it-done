@@ -7,6 +7,10 @@ describe("Tasks", () => {
     cy.visit('/');
   });
 
+  it("Heading h1", () => {
+    cy.get('h1').contains('Tasks');
+  })
+
   it("Adding a task", () => {
     cy.get('#new-task-form input[name="task"]').type('Write tests.');
     cy.get('#new-task-form button').click();
