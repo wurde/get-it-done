@@ -23,7 +23,9 @@ function TaskList() {
 
   return (
     <ul style={ListCSS}>
-      {tasks.map((task,index) => <Task key={index} {...task} />)}
+      {tasks.map((task, index) => (
+        <Task key={index} {...task} tasks={tasks} setTasks={setTasks} />
+      ))}
       <NewTaskForm tasks={tasks} setTasks={setTasks} />
     </ul>
   );
