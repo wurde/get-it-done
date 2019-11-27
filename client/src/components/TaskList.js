@@ -10,7 +10,11 @@ import Task from './Task';
  */
 
 function TaskList() {
-  const [tasks, setTasks] = useState([{description: "Check the box"}]);
+  const [tasks, setTasks] = useState([
+    {description: "List item 1"},
+    {description: "List item 2"},
+    {description: "List item 3"},
+  ]);
 
   return (
     <ul>
