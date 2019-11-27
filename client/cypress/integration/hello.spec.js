@@ -8,6 +8,6 @@ describe("Hello", () => {
   });
 
   it("You should add tests!", () => {
-    expect(true).to.equal(true);
+    expect(true).to.equal(false);
   })
 })
