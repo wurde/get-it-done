@@ -11,7 +11,8 @@ describe("Tasks", () => {
     cy.get('h1').contains('Tasks');
   })
 
-  it("Adding a task", () => {
+  it("Add, complete, and clear tasks", () => {
+    // Add tasks
     cy.get('#new-task-form input[name="task"]').type('Write tests.');
     cy.get('#new-task-form button').click();
     cy.get('ul').children('li').should('have.length', 1);
@@ -20,14 +21,13 @@ describe("Tasks", () => {
     cy.get('#new-task-form button').click();
     cy.get('ul').children('li').should('have.length', 2);
     cy.get('ul').contains('Refactor code.');
-  })
 
-  it("Completing a task", () => {
-    cy.get('#new-task-form input[name="task"]').type('Completing tasks.');
-    cy.get('#new-task-form button').click();
-    cy.get('#new-task-form input[name="task"]').type('Uncompleting tasks.');
-    cy.get('#new-task-form button').click();
+    // Complete tasks
     cy.get('.li-task').first().click();
     cy.get('.li-completed').should('have.length', 1);
+
+    // Clear completed tasks
+    cy.get('button').contains('Clear').click();
+    cy.get('ul').children('li').should('have.length', 1);
   })
 })
