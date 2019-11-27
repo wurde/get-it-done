@@ -21,7 +21,7 @@ function NewTaskForm(props) {
 
   return (
     <li>
-      <form action="post" onSubmit={addTask}>
+      <form id="new-task-form" action="post" onSubmit={addTask}>
         <input type="text" name="task" value={task} onChange={e => setTask(e.target.value)}></input>
         <button type="submit">Add</button>
       </form>
