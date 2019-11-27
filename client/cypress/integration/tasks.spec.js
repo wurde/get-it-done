@@ -8,8 +8,11 @@ describe("Tasks", () => {
   });
 
   it("Adding a task", () => {
-    cy.get('#new-task-form input[name="task"]').type('Setup tests.');
+    cy.get('#new-task-form input[name="task"]').type('Write tests.');
     cy.get('#new-task-form button').click();
-    expect(true).to.equal(true);
+    cy.get('ul').children('li').should('have.length', 1);
+    cy.get('#new-task-form input[name="task"]').type('Refactor code.');
+    cy.get('#new-task-form button').click();
+    cy.get('ul').children('li').should('have.length', 2);
   })
 })

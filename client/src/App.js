@@ -23,7 +23,7 @@ function App() {
       </header>
       <main>
         <ClearButton tasks={tasks} setTasks={setTasks} />
-        <TaskList />
+        <TaskList tasks={tasks} setTasks={setTasks} />
         <NewTaskForm tasks={tasks} setTasks={setTasks} />
       </main>
     </div>
