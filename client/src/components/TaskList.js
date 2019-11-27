@@ -4,8 +4,6 @@
 
 import React, { useState } from 'react';
 import Task from './Task';
-import NewTaskForm from './NewTaskForm';
-import ClearButton from './ClearButton';
 
 /**
  * Define styles
@@ -19,16 +17,12 @@ const ListCSS = {
  * Define component
  */
 
-function TaskList() {
-  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
-
+function TaskList(props) {
   return (
     <ul style={ListCSS}>
-      <ClearButton tasks={tasks} setTasks={setTasks} />
-      {tasks.map((task, index) => (
-        <Task key={index} index={index} {...task} tasks={tasks} setTasks={setTasks} />
+      {props.tasks.map((task, index) => (
+        <Task key={index} index={index} {...task} tasks={props.tasks} setTasks={props.setTasks} />
       ))}
-      <NewTaskForm tasks={tasks} setTasks={setTasks} />
     </ul>
   );
 }

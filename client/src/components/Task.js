@@ -31,9 +31,9 @@ function Task(props) {
   }
 
   if (props.isCompleted) {
-    return <li onClick={markCompleted} style={ListItemCSS}><strike>{props.description}</strike></li>
+    return <li className="li-task li-completed" onClick={markCompleted} style={ListItemCSS}><strike>{props.description}</strike></li>
   } else {
-    return <li onClick={markCompleted} style={ListItemCSS}>{props.description}</li>
+    return <li className="li-task" onClick={markCompleted} style={ListItemCSS}>{props.description}</li>
   }
 }
 
