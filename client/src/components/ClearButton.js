@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { Button } from '@wurde/components';
 
 /**
  * Define styles
@@ -24,7 +25,7 @@ function ClearButton(props) {
     props.setTasks(updatedList);
   };
 
-  return <button onClick={clearCompleted} style={ButtonCSS}>Clear</button>
+  return <Button type="secondary" onClick={clearCompleted} style={ButtonCSS}>Clear</Button>
 }
 
 /**

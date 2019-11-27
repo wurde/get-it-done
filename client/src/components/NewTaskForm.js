@@ -3,6 +3,7 @@
  */
 
 import React, { useState } from 'react';
+import { Form, FormGroup, Input, Button } from '@wurde/components';
 
 /**
  * Define component
@@ -20,10 +21,12 @@ function NewTaskForm(props) {
   }
 
   return (
-    <form id="new-task-form" action="post" onSubmit={addTask}>
-      <input type="text" name="task" value={task} onChange={e => setTask(e.target.value)}></input>
-      <button type="submit">Add</button>
-    </form>
+    <Form id="new-task-form" action="post" onSubmit={addTask}>
+      <FormGroup>
+        <Input type="text" name="task" value={task} onChange={e => setTask(e.target.value)}></Input>
+      </FormGroup>
+      <Button type="submit">Add</Button>
+    </Form>
   )
 }
 
