@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.0.0",
-    "cypress": "^3.6.1",
+    "cypress": "^15.9.0",
     "start-server-and-test": "^1.10.6",
     "wait-on": "^3.3.0"
   }
